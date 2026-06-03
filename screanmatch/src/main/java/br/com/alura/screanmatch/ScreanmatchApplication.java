@@ -1,5 +1,6 @@
 package br.com.alura.screanmatch;
 
+import br.com.alura.screanmatch.model.DadosEpisodios;
 import br.com.alura.screanmatch.model.DadosSerie;
 import br.com.alura.screanmatch.service.ConsumoApi;
 import br.com.alura.screanmatch.service.ConverteDados;
@@ -17,6 +18,10 @@ public class ScreanmatchApplication implements CommandLineRunner {
 		ConverteDados conversor = new ConverteDados();
 		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
 		System.out.println(dados);
+		json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&Seano=1&apikey=60221604");
+		DadosEpisodios dadosEpisodios = conversor.obterDados(json, DadosEpisodios.class);
+		System.out.println(dadosEpisodios);
+
 	}
 
 	public static void main(String[] args) {
