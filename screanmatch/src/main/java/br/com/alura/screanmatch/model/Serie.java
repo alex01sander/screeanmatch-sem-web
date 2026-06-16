@@ -34,7 +34,7 @@ public class Serie {
         this.poster = dadosSerie.poster();
 //        this.sinopse = ConsultaChatGPT.obterTraducao( dadosSerie.sinopse()).trim();
     }
-    @Transient
+    @OneToMany(mappedBy = "serie")
    private List<Episodio> episodios =  new ArrayList<Episodio>();
     public Serie(){}
 
