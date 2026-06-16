@@ -36,6 +36,7 @@ public class Serie {
     }
     @Transient
    private List<Episodio> episodios =  new ArrayList<Episodio>();
+    public Serie(){}
 
     public List<Episodio> getEpisodios() {
         return episodios;

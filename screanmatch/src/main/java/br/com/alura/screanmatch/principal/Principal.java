@@ -93,6 +93,7 @@ public class Principal {
     }
 
     private void listarSeriesBuscadas(){
-        dadosSeries.forEach(System.out::println);
+        List<Serie> series = repositorio.findAll();
+        series.stream().sorted(Comparator.comparing(Serie::getGenero)).forEach(System.out::println);
     }
 }
